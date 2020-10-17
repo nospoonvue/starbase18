@@ -1,4 +1,4 @@
-# rurallivinglab
+# starbase18
 
 ## Project setup
 ```
