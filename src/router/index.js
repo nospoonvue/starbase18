@@ -6,6 +6,7 @@ import Blog from '../views/Blog.vue'
 import Login from '../views/Login.vue'
 import Courses from '../views/Courses.vue'
 import Course from '../views/Course.vue'
+import Sponsors from '../views/Sponsors.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ Vue.use(VueRouter)
   name: 'Blog',
   component: Blog
   },
+  {
+    path: '/sponsors',
+    name: 'Sponsors',
+    component: Sponsors
+    },
   {
   path: '/login',
   name: 'Login',
