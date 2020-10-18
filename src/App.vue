@@ -143,7 +143,7 @@
 //import something from "./assets/js/something.js"
 //import "./assets/js/jquery.min.js"
 import sideBar from "./assets/js/main.js"
-import "./assets/css/main.css?fsd=fs"
+import "./assets/css/main.css"
 //import "./assets/css/sss.css"
 
 
