@@ -3,8 +3,9 @@
 							<!-- Banner -->
 								<section id="banner" class="banner">
 									<div class="content">
+										<p class="headerimg"><img src="images/starbase18building.jpg" alt="" style="max-height:400px; "/></p>
 										<header>
-											<p><img src="images/starbase18building.jpg" alt="" style="max-height:400px;"/></p>
+											
 											<h1>Starbase 18</h1>
 											<p>Quinta Das Novas Estrelas</p>
 										</header>
@@ -38,7 +39,7 @@
 										<img src="images/starbase18building.jpg" alt="" style="max-height:400px;"/>
 									</span>-->
 								</section>
--->
+
 							<!-- Section 
 								<section>
 									<header class="major">
