@@ -3,10 +3,12 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Projects from '../views/Projects.vue'
 import Blog from '../views/Blog.vue'
+import Contact from '../views/Contact.vue'
+import Team from '../views/Team.vue'
 import Login from '../views/Login.vue'
 import Courses from '../views/Courses.vue'
 import Course from '../views/Course.vue'
-import Sponsors from '../views/Sponsors.vue'
+import Partners from '../views/Partners.vue'
 
 Vue.use(VueRouter)
 
@@ -25,6 +27,11 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact
+    },
+  {
   path: '/projects',
   name: 'Projects',
   component: Projects
@@ -35,9 +42,14 @@ Vue.use(VueRouter)
   component: Blog
   },
   {
-    path: '/sponsors',
-    name: 'Sponsors',
-    component: Sponsors
+    path: '/team',
+    name: 'Team',
+    component: Team
+    },
+  {
+    path: '/partners',
+    name: 'Partners',
+    component: Partners
     },
   {
   path: '/login',
