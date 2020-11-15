@@ -23,9 +23,6 @@
 
               					<router-view/>
 
-								<footer id="footer" style="text-align:center">
-									<p class="copyright">&copy; Starbase18</p>
-								</footer>
 						</div>
 					</div>
 

@@ -2,24 +2,27 @@
  <div id="courses">
     
     <Status class="StatusShow" v-bind:img="status" v-show="loading" />
-
-    <section id="" class="post" v-for="item in data" :key="item.fields.Title">
-        <br/>
-        <div class="content" >
+ <br/>
+    <section id="" class="post" v-for="item in data" :key="item.fields.Title" style="float:left">
+       
+        <div class="content" style="max-width:400px;margin:10px; height:500px;  display: flex; flex-direction: column;  justify-content: space-between;">
             <header>
-                <Agile :slidesToShow="1" :dots="true" :navButtons="false" :key="item.fields.Visuals.length" :centerMode="true">
+                <Agile :slidesToShow="1" :dots="false" :navButtons="false" :key="item.fields.Visuals.length" :centerMode="true">
                     <div class="slide" v-for="item in  filterImages(item.fields.Visuals)" :key="item.url"  >
-                        <img v-bind:src="item.url" v-bind:alt="item.Title" style="width:100%" />
+                        <img v-bind:src="item.url" v-bind:alt="item.Title" style="width:100%;border-radius:10px;" />
                     </div>
                 </Agile>
+                <h6>ECTS: {{ item.fields.ECTS }} </h6> 
                 <h2>{{ item.fields.Title }}</h2>
             </header>
-                <p><vue-markdown>{{ item.fields.ShortDescription }}</vue-markdown></p>
-                <h5>ECTS: {{ item.fields.ECTS }} </h5>         
-            <ul class="actions">
-                <li><router-link :to="'/course/'+item.fields.LinkName" class="button big">Learn More</router-link></li>
-   
-            </ul>
+            <p>
+                <vue-markdown>{{ item.fields.ShortDescription }}</vue-markdown>
+            </p>
+            <div style="">           
+                <ul class="actions">
+                    <li><router-link :to="'/course/'+item.fields.LinkName" class="button big">Learn More</router-link></li>
+                </ul>
+            </div>
         </div>
 
     </section>
@@ -149,7 +152,7 @@ export default
         status: "",
         offset: "",
         offsetHistoryCursor: 0,
-        pageSize: 2,
+        pageSize: 20,
         offsetHistory: [],  
         table: "Course",
         view: "Main",
@@ -174,7 +177,7 @@ export default
         },
         filterImages: function (visuals) {
             return visuals.filter(function (image) {
-            return  image.url.includes("736x512");  
+            return  image.url.includes("_small");  
             })
         }
     },
