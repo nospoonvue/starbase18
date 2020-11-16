@@ -1,36 +1,36 @@
+
 <template>
  <div id="team">
-    
     <Status class="StatusShow" v-bind:img="status" v-show="loading" />
 
-    <section id="" class="post" v-for="item in info" :key="item.id">
-
-
-        <div class="content" >
-        <br/>
-        <span class="image object">
-                <img v-bind:src="item.fields.Photos[0].url" v-bind:alt="item.fields.Title" style="max-width:100%;max-height:200px;" />
-        </span>
-            <header>
-                <h1>{{ item.fields.Title }}</h1>
-                <p><vue-markdown>{{ item.fields.Subtitle }}</vue-markdown></p>
-                <h5>{{ item.fields.PublishDate }} </h5>
-            </header>
-            <p><vue-markdown>{{ item.fields.Article }}</vue-markdown><br/></p>
-            <ul class="actions">
-                <li><a v-bind:href="item.fields.Url" class="button big" target="_blank">Learn More</a></li>
-            </ul>
-        </div>
-
+    <section id="" class="post" v-for="item in info" :key="item.id" style="float:left;">
+		<div class="" style="max-width:400px;margin:10px; height:500px;  display: flex; flex-direction: column;  justify-content: space-between;" >
+			<article>
+				<a href="#" class="image"><img v-bind:src="item.fields.Photos[0].url" v-bind:alt="item.fields.Title" style="width:100%" /></a>               
+				<h3>{{ item.fields.Title }}</h3>
+                <h6>{{ item.fields.Subtitle }}</h6>
+                <vue-markdown style="font-size:.8em;">{{ item.fields.Article }}</vue-markdown>
+			</article>
+            <!--
+            <div style="">           
+				<ul class="actions">
+					<li><a href="#" class="button">More</a></li>
+				</ul>
+            </div>
+            -->
+		</div>
     </section>
+
     <section class="">
-
-    <div id="pages" style="text-align:center" v-show="ready">
-        <p><button  :disabled='backDisabled' v-on:click="backward">previous page</button> | <button  :disabled='forwardDisabled' v-on:click="forward">next page</button></p>
-    </div>
+		<div id="pages" style="text-align:center" v-show="ready">
+			<p><button  :disabled='backDisabled' v-on:click="backward">previous page</button> | <button  :disabled='forwardDisabled' v-on:click="forward">next page</button></p>
+		</div>
     </section>
+
 </div>
 </template>
+
+
 
 
 <style >
@@ -108,7 +108,7 @@ export default
         status: "",
         offset: "",
         offsetHistoryCursor: 0,
-        pageSize: 5,
+        pageSize: 20,
         offsetHistory: [],  
         table: "Team",
         view: "Public"
