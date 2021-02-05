@@ -11,7 +11,7 @@
 										</header>
 										<p>Local crafts and materials combined with new technologies in a circular economy applied for reviving rural regions.</p>
 		<p>
-				<a href="/#/hackathon"><img src="images/sb18hackatonBanner.jpg"/></a>
+				<a href="/#/hackathon"><img src="images/sb18hackatonBanner.jpg" width="100%"></a>
 		</p>
 		<h2>What we are going to create <b>now</b>, Starbase 18</h2>
 <p>Starbase 18 is a continuous living lab in the making for and by students to actually put the circular theory into practise. The lab, a circular mini village, facilitates all sorts activities from learning to build eco tiny houses, to setting up a water efficient aquaponics system, to create a food forest, to build with hemp-crete, to setup a IoT forest fire warning system, to setup a solar array, to learn about Design Thinking, to feed guest with on-site grown bio foods, and much more... All (research) results of the lab are open source, therefor public domain and free to use for everyone. The lab will share these results via various online media. The lab will play an active part in connecting, interacting and sharing with the local community.</p>
