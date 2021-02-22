@@ -2,6 +2,7 @@
  <div id="courses">
     
     <Status class="StatusShow" v-bind:img="status" v-show="loading" />
+       <h1>Courses</h1>
  <br/>
     <section id="" class="post" v-for="item in data" :key="item.fields.Title" style="float:left">
        

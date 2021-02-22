@@ -2,7 +2,7 @@
 <template>
  <div id="projects">
     <Status class="StatusShow" v-bind:img="status" v-show="loading" />
-
+   <h1>Projects</h1>
     <section id="" class="post" v-for="item in info" :key="item.id" style="float:left;">
 		<div class="" style="max-width:400px;margin:10px; height:500px;  display: flex; flex-direction: column;  justify-content: space-between;" >
 			<article>
@@ -11,10 +11,12 @@
 				        <vue-markdown>{{ item.fields.Article }}</vue-markdown>
 			</article>
 
-            <div style="">           
+            <div style="">  
+                <!--         
 				<ul class="actions">
 					<li><a href="#" class="button">More</a></li>
 				</ul>
+                -->
             </div>
 		</div>
     </section>

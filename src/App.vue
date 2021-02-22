@@ -52,18 +52,18 @@
 									</header>
 									<ul>
                         
-										<li><router-link to="/">Home</router-link></li>		
-										<li><router-link to="/hackathon" >Hackaton</router-link></li>		
+										<li><router-link to="/">Home</router-link></li>												
 										<li><router-link to="/join" >Join</router-link></li>																										
-										<li><router-link to="/blog" >Blog</router-link></li>
-										
+										<li><router-link to="/blog" >Blog</router-link></li>										
 										<li><router-link to="/projects" >Projects</router-link></li>
 										<li><router-link to="/courses" >Courses</router-link></li>		
 										<li><router-link to="/team">Team</router-link></li>									
-										<li><router-link to="/partners">Partners</router-link></li>		
+										<li><router-link to="/partners">Partners</router-link></li>	
+										<li><router-link to="/about">About</router-link></li>	
 										<li><router-link to="/contact">Contact</router-link></li>									
+									
 										<!--
-											<li><router-link to="/about">About</router-link></li>
+												<li><router-link to="/generictest">test</router-link></li>	
 										<li><a href="index.html">Homepage</a></li>
 										<li><a href="generic.html">Generic</a></li>
 										<li><a href="elements.html">Elements</a></li>

@@ -2,7 +2,7 @@
  <div id="sponsors">
     
     <Status class="StatusShow" v-bind:img="status" v-show="loading" />
-
+   <h1>Partners</h1>
     <section id="" class="post" v-for="item in info" :key="item.id">
 
 
@@ -17,9 +17,11 @@
                 <h5>{{ item.fields.PublishDate }} </h5>
             </header>
             <p><vue-markdown>{{ item.fields.Article }}</vue-markdown><br/></p>
+            <!--
             <ul class="actions">
                 <li><a v-bind:href="item.fields.Url" class="button big" target="_blank">Learn More</a></li>
             </ul>
+            -->
         </div>
 
     </section>

@@ -2,7 +2,7 @@
 <template>
  <div id="team">
     <Status class="StatusShow" v-bind:img="status" v-show="loading" />
-
+   <h1>Team</h1>
     <section id="" class="post" v-for="item in info" :key="item.id" style="float:left;">
 		<div class="" style="max-width:400px;margin:10px; height:500px;  display: flex; flex-direction: column;  justify-content: space-between;" >
 			<article>

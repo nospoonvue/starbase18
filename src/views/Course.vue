@@ -1,7 +1,7 @@
 <template>
     <div id="course">
         <Status class="StatusShow" v-bind:img="status" v-show="loading" />
-
+     
     <section  v-if="!selectedSection && !selectedSubject && showCourseInfo">
         
         <span class="image main">
