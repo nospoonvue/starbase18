@@ -2,10 +2,8 @@
  <div id="sponsors">
     
     <Status class="StatusShow" v-bind:img="status" v-show="loading" />
-   <h1>Partners</h1>
+   <GenericPage class="" :page="'Partners'" />
     <section id="" class="post" v-for="item in info" :key="item.id">
-
-
         <div class="content" >
         <br/>
         <span class="image object">
@@ -42,6 +40,7 @@
 <script>
 import axios from 'axios';
 import Status from '@/components/Status.vue'
+import GenericPage from '@/components/GenericPage.vue'
 import VueMarkdown from 'vue-markdown'
 
 async function getData(viewStatus)
@@ -99,7 +98,7 @@ await axios.post (viewStatus.$baseUrl, formData, config)
 export default 
 {
     name: "Sponsors",
-    components: {Status, VueMarkdown},
+    components: {Status, VueMarkdown,GenericPage},
 
     data() 
     {
@@ -113,7 +112,7 @@ export default
         pageSize: 5,
         offsetHistory: [],  
         table: "Sponsors",
-        view: "Public"
+        view: "Public"        
         }
     },
     methods:

@@ -9,7 +9,7 @@ import Login from '../views/Login.vue'
 import Courses from '../views/Courses.vue'
 import Course from '../views/Course.vue'
 import Partners from '../views/Partners.vue'
-import Hackathon from '../views/Hackathon.vue'
+import Mentors from '../views/Mentors.vue'
 import GenericTest from '../views/GenericTest.vue'
 import Join from '../views/Join.vue'
 
@@ -54,6 +54,11 @@ Vue.use(VueRouter)
     name: 'Team',
     component: Team
     },
+    {
+      path: '/mentors',
+      name: 'Mentors',
+      component: Mentors
+      },
     {
       path: '/join',
       name: 'Join',

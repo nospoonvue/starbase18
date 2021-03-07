@@ -59,6 +59,7 @@
 										<li><router-link to="/courses" >Courses</router-link></li>		
 										<li><router-link to="/team">Team</router-link></li>									
 										<li><router-link to="/partners">Partners</router-link></li>	
+										<li><router-link to="/mentors">Mentors</router-link></li>	
 										<li><router-link to="/about">About</router-link></li>	
 										<li><router-link to="/contact">Contact</router-link></li>									
 									
@@ -181,18 +182,18 @@ export default {
       
    },
    created() 
-    {
-		
-	if(localStorage.user)
-    {
-	  this.user = JSON.parse(localStorage.user);
+    {		
+		if(localStorage.user)
+		{
+		this.user = JSON.parse(localStorage.user);
 
-	  if(this.user.Name)
-	  {
-		  this.loginLabel = this.user.Name;
-	  }
-    }
-		
+		if(this.user.Name)
+		{
+			this.loginLabel = this.user.Name;
+		}
+		}
+	
+
     }
 }
 
