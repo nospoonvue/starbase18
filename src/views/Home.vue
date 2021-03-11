@@ -1,6 +1,6 @@
 <template>
     <div id="blog">    
-        <GenericPage class="" :page="page" />
+        <GenericPage class="" :page="page" :paging="paging" :pageSize="pageSize"/>
     </div>
 </template>
 
@@ -21,7 +21,9 @@ export default
     data() 
     {
         return {
-        page: "Home"
+        page: "Home",
+        pageSize: 1,
+        paging: false
         }
     },
     methods:{

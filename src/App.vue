@@ -32,7 +32,9 @@
 						<div class="inner">
 							<div id="logo" style="width:100%;text-align:center">
 							<img src="images/SB18-logo.png" style="max-width:100px; ">
+							<div>Starbase18.com</div>
 							</div>
+							
 							<!-- Search 
 								<section id="search" class="alt">
 									<form method="post" action="#">

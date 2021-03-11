@@ -10,7 +10,6 @@ import Courses from '../views/Courses.vue'
 import Course from '../views/Course.vue'
 import Partners from '../views/Partners.vue'
 import Mentors from '../views/Mentors.vue'
-import GenericTest from '../views/GenericTest.vue'
 import Join from '../views/Join.vue'
 
 Vue.use(VueRouter)
@@ -43,11 +42,6 @@ Vue.use(VueRouter)
   path: '/blog',
   name: 'Blog',
   component: Blog
-  },
-  {
-  path: '/generictest',
-  name: 'GenericTest',
-  component: GenericTest
   },
   {
     path: '/team',

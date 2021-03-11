@@ -1,16 +1,13 @@
 <template>
     <div id="blog">    
-        <GenericPage class="" :page="page" />
+       <GenericPage class="" :page="page" :paging="paging" :pageSize="pageSize"/>
     </div>
 </template>
 
-
 <style >
-
 </style>
 
 <script>
-
 import GenericPage from '@/components/GenericPage.vue'
 
 export default 
@@ -21,21 +18,18 @@ export default
     data() 
     {
         return {
-        page: "Join"
+        page: "Join",
+        pageSize: 1,
+        paging: false
         }
     },
     methods:{
-
     },
     computed: {
-
     },
     created(){
-
     },
 }
-
-
 </script>
 
 
