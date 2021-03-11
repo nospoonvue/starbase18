@@ -1,6 +1,7 @@
 <template>
  <div id="team">
-   <ItemsList :table="this.table" :view="this.view" :filter="this.filter" :paging="this.paging" :pageSize="this.pageSize"/>    
+    <GenericPage class="" :page="this.table" />
+    <ItemsList :table="this.table" :view="this.view" :filter="this.filter" :paging="this.paging" :pageSize="this.pageSize"/>    
 </div>
 </template>
 
@@ -9,13 +10,13 @@
 </style>
 
 <script>
-
+import GenericPage from '@/components/GenericPage.vue'
 import ItemsList from '@/components/ItemsList.vue'
 
 export default 
 {
     name: "team",
-    components: {ItemsList},
+    components: {GenericPage,ItemsList},
 
     data() 
     {

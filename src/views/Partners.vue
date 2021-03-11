@@ -1,5 +1,5 @@
 <template>
- <div id="il">
+ <div id="partners">
     <GenericPage class="" :page="this.table" />
     <ItemsList :table="this.table" :view="this.view" :filter="this.filter" :paging="this.paging" :pageSize="this.pageSize"/>    
 </div>
@@ -15,7 +15,7 @@ import ItemsList from '@/components/ItemsList.vue'
 
 export default 
 {
-    name: "itemsList",
+    name: "partners",
     components: {GenericPage,ItemsList},
 
     data() 

@@ -1,7 +1,7 @@
 <template>
  <div id="blog">
-    
-   <BlogListing :paging="this.paging" :pageSize="this.pageSize"/>
+    <GenericPage class="" :page="this.table" />
+    <BlogListing :paging="this.paging" :pageSize="this.pageSize"/>
     
 </div>
 </template>
@@ -12,13 +12,13 @@
 </style>
 
 <script>
-
+import GenericPage from '@/components/GenericPage.vue'
 import BlogListing from '@/components/BlogListing.vue'
 
 export default 
 {
     name: "Blog",
-    components: {BlogListing},
+    components: {GenericPage,BlogListing},
 
     data() 
     {
