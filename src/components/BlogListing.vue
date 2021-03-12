@@ -2,18 +2,17 @@
  <div id="blogListing">
     
     <DataConnection :application="this.application" :table="this.table" :view="this.view" :page="this.page" :paging="this.paging" :pageSize="this.pageSize" :offset="this.offset" :filter="this.filter" :parent="this" :key="key" />
-    <section id="posts" class="post" v-for="item in info" :key="item.id">
+    <section id="posts" class="post" v-for="(item) in info" :key="item.id">
         <div class="content" :key="'content'+keyId">
-        <br/>
             <header>
-                <h1>{{ item.fields['Title'+getLanguage] }}</h1>
-                <p><vue-markdown>{{ item.fields['Subtitle'+getLanguage] }}</vue-markdown></p>
+                <h1 :class="getSpan('Title',item)">{{ getContent('Title',item) }}</h1>
+                <p :class="getSpan('Subtitle',item)"><vue-markdown>{{ getContent('Subtitle',item) }}</vue-markdown></p>
                 <h5>{{ item.fields.PublishDate }} </h5>
             </header>
-            <p><vue-markdown>{{ item.fields['Article'+getLanguage] }}</vue-markdown></p>
+            <p :class="getSpan('Article',item)"><vue-markdown>{{ getContent('Article',item) }}</vue-markdown></p>
 
             <span class="image object">
-                <img v-bind:src="item.fields.Photos[0].url" v-bind:alt="item.fields['Title'+getLanguage]" style="width:100%" />
+                <img v-bind:src="item.fields.Photos[0].url" v-bind:alt="getContent('Title',item)" style="width:100%" />
             </span>
             <!--
             <ul class="actions">
@@ -70,6 +69,23 @@ this.keyId++;
 
     },
     methods:{
+      getSpan: function(contentLabel, dataSource)
+      {
+        if(dataSource.fields[contentLabel+this.getLanguage]) return "notranslate";
+      },
+      getContent: function(contentLabel, dataSource)
+      {
+        if(dataSource.fields[contentLabel+this.getLanguage])
+        {
+          //content found
+          return dataSource.fields[contentLabel+this.getLanguage];
+        }
+        else
+        {
+          //default language
+          return dataSource.fields[contentLabel+"ENG"];
+        }        
+      }
 
 
     },

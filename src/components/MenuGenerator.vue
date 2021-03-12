@@ -1,7 +1,7 @@
 <template>
  <div id="menu">
       <DataConnection :application="this.application" :table="this.table" :view="this.view" :page="this.page" :paging="this.paging" :pageSize="this.pageSize" :offset="this.offset" :filter="this.filter" :parent="this" :key="key" />
-        <nav id="menu">
+        <nav id="menu" class="notranslate">
 			<header class="major">
 		    	<h2>Menu</h2>
 			</header>

@@ -12,7 +12,8 @@
 									<ul class="icons">
 										<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>-->
 										<li><a href="https://www.facebook.com/starbase18" target="_blank" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="https://www.linkedin.com/in/frankkroondijk/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+										<li><a href="https://www.linkedin.com/company/starbase18/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+										<li><a href="https://www.linkedin.com/groups/9025317/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 										<li><a href="https://www.instagram.com/starbase18/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 										<li><a href="https://www.youtube.com/channel/UCu6f7q7NqtuCD90VVVnhtMA" target="_blank" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
 										
@@ -24,6 +25,7 @@
 											<a @click="setLanguage('PT')" ><img src="images/portugal.svg" class="flag"></a>
 										</li>
 									</ul>
+
 								</header>
 
               					<router-view/>
@@ -54,7 +56,9 @@
 							<!-- Menu -->
 							
               				 <MenuGenerator :id="2" :iets="iets"></MenuGenerator>
+							     
 						</div>
+						<div id="google_translate_element" style="width:150px;margin-left: auto; margin-right: 0;visibility: hidden;"></div>
                 	</div>
 				</section>
 	 	</div>
@@ -96,7 +100,11 @@ export default {
    	}
  ,
   mounted() {
-    
+
+      let translateScript = document.createElement('script');
+      translateScript.setAttribute('src', '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit');
+      document.head.appendChild(translateScript);
+
    
 	sideBar();
 	
@@ -106,8 +114,28 @@ export default {
 		sideBar,
 		setLanguage: function(lang)
 		{
+			
 			this.$store.commit('setLanguage',lang);		
 			this.keyId++;
+			var menuItems = document.getElementsByClassName('goog-te-menu-frame skiptranslate')[0].contentWindow.document.querySelectorAll("[class^='goog-te-menu2-item']");
+			menuItems.forEach(element => {
+				if(element.firstElementChild.innerHTML.indexOf('Dutch')>-1 && lang == "NL")
+				{
+					element.click();	
+					return;				
+				}
+				else if(element.firstElementChild.innerHTML.indexOf('Portuguese')>-1 && lang == "PT")
+				{
+					element.click();	
+					return;				
+				}
+				else if(element.firstElementChild.innerHTML.indexOf('English')>-1 && lang == "ENG")
+				{
+					//Eng, default
+					document.getElementById(':2.container').contentWindow.document.getElementById(':2.close').click();
+				}
+			});
+
 		}   
       
    },

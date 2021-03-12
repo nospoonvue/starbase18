@@ -5,8 +5,8 @@
 
     <h1>{{ this.page }}</h1>
     <section id="" class="post" v-for="item in info" :key="item.id">
-        <h2 :v-show="!!item.fields['SectionHeader'+getLanguage]" :key="'head'+keyId">{{ item.fields['SectionHeader'+ getLanguage] }}</h2>
-        <p><vue-markdown :key="'content'+keyId">{{ item.fields['SectionContent'+ getLanguage] }}</vue-markdown></p>
+        <h2 :v-show="!!getContent('SectionHeader',item)" :key="'head'+keyId" :class="getSpan('SectionHeader',item)">{{ getContent('SectionHeader',item) }}</h2>
+        <p :class="getSpan('SectionContent',item)"><vue-markdown :key="'content'+keyId">{{ getContent('SectionContent',item) }}</vue-markdown></p>
     </section>
 
     <Paging :paging="this.paging" :parent="this"/>
@@ -52,6 +52,23 @@ export default
        
     },
     methods:{
+        getSpan: function(contentLabel, dataSource)
+        {
+            if(dataSource.fields[contentLabel+this.getLanguage]) return "notranslate";
+        },
+        getContent: function(contentLabel, dataSource)
+        {
+            if(dataSource.fields[contentLabel+this.getLanguage])
+            {
+            //content found
+            return dataSource.fields[contentLabel+this.getLanguage];
+            }
+            else
+            {
+            //default language
+            return dataSource.fields[contentLabel+"ENG"];
+            }        
+        }
     },
     computed: {
         getLanguage: function () {
