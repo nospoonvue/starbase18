@@ -1,7 +1,8 @@
 <template>
  <div id="blog">
      <div style="float:left;width:100%;">
-        
+         
+        <div style=" cursor: pointer;width:150px;margin-left: auto; margin-right: 0;" onClick="var iframe =document.getElementById(':2.container').contentWindow.document.getElementById(':2.close').click();">reset language</div>
         <div id="google_translate_element" style="width:150px;margin-left: auto; margin-right: 0;"></div>  
      </div>
     <GenericPage class="" :page="'Blog'" />
@@ -12,7 +13,12 @@
 
 
 <style >
-
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+    } 
+body {
+    top: 0px !important; 
+    }
 </style>
 
 <script>
