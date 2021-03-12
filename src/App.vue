@@ -19,9 +19,9 @@
 										<!-- <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>		-->
                    						<li><nav id="nav"><router-link to="/login"><div id="un">{{loginLabel}}</div></router-link></nav></li>
 										<li>
-											<a @click="setLanguage('ENG')" ><img src="images/united-kingdom.svg" class="flag"></a>
-											<a @click="setLanguage('NL')" ><img src="images/netherlands.svg" class="flag"></a>
-											<a @click="setLanguage('PT')" ><img src="images/portugal.svg" class="flag"></a>
+											<a @click="setLanguage('ENG')" style="text-decoration: none;" ><img src="images/united-kingdom.svg" class="flag"></a>
+											<a @click="setLanguage('NL')" style="text-decoration: none;"><img src="images/netherlands.svg" class="flag"></a>
+											<a @click="setLanguage('PT')" style="text-decoration: none;"><img src="images/portugal.svg" class="flag"></a>
 										</li>
 									</ul>
 								</header>

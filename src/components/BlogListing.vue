@@ -1,19 +1,20 @@
 <template>
  <div id="blogListing">
-
+    
     <DataConnection :application="this.application" :table="this.table" :view="this.view" :page="this.page" :paging="this.paging" :pageSize="this.pageSize" :offset="this.offset" :filter="this.filter" :parent="this" :key="key" />
-    <section id="" class="post" v-for="item in info" :key="item.id">
-        <div class="content" >
+    <section id="posts" class="post" v-for="item in info" :key="item.id">
+        <div class="content" :key="'content'+keyId">
         <br/>
-        <span class="image object">
-                <img v-bind:src="item.fields.Photos[0].url" v-bind:alt="item.fields['TitleENG']" style="width:100%" />
-        </span>
             <header>
-                <h1>{{ item.fields['TitleENG'] }}</h1>
-                <p><vue-markdown>{{ item.fields['SubtitleENG'] }}</vue-markdown></p>
+                <h1>{{ item.fields['Title'+getLanguage] }}</h1>
+                <p><vue-markdown>{{ item.fields['Subtitle'+getLanguage] }}</vue-markdown></p>
                 <h5>{{ item.fields.PublishDate }} </h5>
             </header>
-            <p><vue-markdown>{{ item.fields['ArticleENG'] }}</vue-markdown></p>
+            <p><vue-markdown>{{ item.fields['Article'+getLanguage] }}</vue-markdown></p>
+
+            <span class="image object">
+                <img v-bind:src="item.fields.Photos[0].url" v-bind:alt="item.fields['Title'+getLanguage]" style="width:100%" />
+            </span>
             <!--
             <ul class="actions">
                 <li><a href="#" class="button big">Learn More</a></li>
@@ -37,6 +38,7 @@ import DataConnection from '@/components/DataConnection.vue'
 import Paging from '@/components/Paging.vue'
 import VueMarkdown from 'vue-markdown'
 
+
 export default 
 {
     name: "BlogListing",
@@ -52,17 +54,30 @@ export default
         application: "Starbase18", 
         table: "Blog",
         view: "Public",    
+        filter: null,
+        keyId: 1,
+        language: "ENG",
+        page: "Blog"//not used
         }
     },
     props: {
         paging: false,
         pageSize: null,
     },
-    created() {
+    ready() {
+this.keyId++;
+
     },
     methods:{
+
+
     },
     computed: {
+      getLanguage: function () {
+            this.language = this.$store.state.language;
+            this.keyId++;
+            return this.language
+        }
   },
 }
 </script>
