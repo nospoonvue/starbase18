@@ -1,7 +1,7 @@
 
 <template>
-     <div id="app">
-      <div id="wrapper">
+    <div id="app">
+      	<div id="wrapper">
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
@@ -18,6 +18,11 @@
 										
 										<!-- <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>		-->
                    						<li><nav id="nav"><router-link to="/login"><div id="un">{{loginLabel}}</div></router-link></nav></li>
+										<li>
+											<a @click="setLanguage('ENG')" ><img src="images/united-kingdom.svg" class="flag"></a>
+											<a @click="setLanguage('NL')" ><img src="images/netherlands.svg" class="flag"></a>
+											<a @click="setLanguage('PT')" ><img src="images/portugal.svg" class="flag"></a>
+										</li>
 									</ul>
 								</header>
 
@@ -47,144 +52,66 @@
 							</div>
 
 							<!-- Menu -->
-              				<div id="nav">
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-                        
-										<li><router-link to="/">Home</router-link></li>												
-										<li><router-link to="/join" >Join</router-link></li>																										
-										<li><router-link to="/blog" >Blog</router-link></li>										
-										<li><router-link to="/projects" >Projects</router-link></li>
-										<li><router-link to="/courses" >Courses</router-link></li>		
-										<li><router-link to="/team">Team</router-link></li>									
-										<li><router-link to="/partners">Partners</router-link></li>	
-										<li><router-link to="/mentors">Mentors</router-link></li>	
-										<li><router-link to="/about">About</router-link></li>	
-										<li><router-link to="/contact">Contact</router-link></li>									
-									
-										<!--
-												<li><router-link to="/generictest">test</router-link></li>	
-										<li><a href="index.html">Homepage</a></li>
-										<li><a href="generic.html">Generic</a></li>
-										<li><a href="elements.html">Elements</a></li>
-										<li>
-											<span class="opener">Submenu</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Etiam Dolore</a></li>
-										<li><a href="#">Adipiscing</a></li>
-										<li>
-											<span class="opener">Another Submenu</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										-->
-									</ul>
-								</nav>
-              				</div>
+							
+              				 <MenuGenerator :id="2" :iets="iets"></MenuGenerator>
 						</div>
                 	</div>
-					</section>
-							<!-- Section 
-								<section>
-									<header class="major">
-										<h2>Ante interdum</h2>
-									</header>
-									<div class="mini-posts">
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-									</div>
-									<ul class="actions">
-										<li><a href="#" class="button">More</a></li>
-									</ul>
-								</section>
-							-->
-							<!-- Section 
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-										<li class="icon solid fa-phone">(000) 000-0000</li>
-										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
-									</ul>
-								</section>
-							-->
-							<!-- Footer 								<footer id="footer">
-									<p class="copyright">&copy; Purposeful learning labs. All rights reserved.</p>
-								</footer>
--->
-
-						</div>
-            							<!-- Footer -->
-
-					</div>
+				</section>
+	 	</div>
+		
+	</div>
 
 </template>
-
+<style scoped>
+.flag
+{
+	width:20px;
+	height:20px;
+	padding:1px;
+}
+</style>
 <script>
 //import something from "./assets/js/something.js"
 //import "./assets/js/jquery.min.js"
 import sideBar from "./assets/js/main.js"
 import "./assets/css/main.css"
 //import "./assets/css/sss.css"
+import MenuGenerator from '@/components/MenuGenerator.vue'
 
 
-//import AccountInfo from "@/components/AccountInfo.vue";
+
 
 export default {
+	components: {MenuGenerator},
 	 data() {
 		 return {
 			 user: {},
-			 loginLabel:'Login'
+			 loginLabel:'Login',
+			 keyId: 1,
+			 iets:4
 		 }
    	}
  ,
- methods: {
-
-},
   mounted() {
     
-    //alert('hier');
+   
 	sideBar();
 	
 
   },
- components: {
-   //AccountInfo
- },
-
    methods: {
-      sideBar
+		sideBar,
+		setLanguage: function(lang)
+		{
+			this.$store.commit('setLanguage',lang);		
+			this.keyId++;
+		}   
       
    },
    created() 
     {		
+		this.iets = 4;
+	
 		if(localStorage.user)
 		{
 		this.user = JSON.parse(localStorage.user);

@@ -1,6 +1,6 @@
 <template>
  <div id="blog">
-    <GenericPage class="" :page="this.table" />
+    <GenericPage class="" :page="'Blog'" />
     <BlogListing :paging="this.paging" :pageSize="this.pageSize"/>
     
 </div>

@@ -5,16 +5,16 @@
     <section  v-if="!selectedSection && !selectedSubject && showCourseInfo">
         
         <span class="image main">
-            <div class="" v-for="item in filterImages" :key="item.Title" >
-                <img v-bind:src="item.url" v-bind:alt="item.Title" />
+            <div class="" v-for="item in filterImages" :key="item.TitleENG" >
+                <img v-bind:src="item.url" v-bind:alt="item.TitleENG" />
             </div>
             
         </span>
         <h1>{{course.Title}}</h1>
-        <blockquote>{{course.ShortDescription}}</blockquote>
+        <blockquote>{{course['ShortDescription'+ this.$store.state.language]}}</blockquote>
 
         <h3>Description</h3>
-        <p>{{course.FullDescription}}<p/>
+        <p>{{course['FullDescription'+ this.$store.state.language]}}<p/>
         <hr class="major" />
     </section>
 
@@ -32,7 +32,7 @@
             <header class="major">
                 <h2>Section</h2>
             </header>
-            <div class="" v-for="section in sections" :key="section.fields.Title" >
+            <div class="" v-for="section in sections" :key="section.fields.TitleENG" >
                 
                 <div v-on:click="toggleSection(section)" style="cursor: pointer;display: inline-block;"> <h3 style="display: inline-block;" ><i  :id="'arrow'+section.id" class="fa fa-angle-double-down"></i> {{section.fields.Order}}. {{section.fields.Title}} ({{section.fields.NumberOfSubjectsFinished}}/{{section.fields.NumberOfSubjects}})</h3></div>
                 <div  :id="section.id" style="display:none">

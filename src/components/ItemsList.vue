@@ -6,9 +6,9 @@
     <section id="" class="post" v-for="item in info" :key="item.id" style="float:left;">
 		<div class="" style="max-width:400px;margin:10px; height:500px;  display: flex; flex-direction: column;  justify-content: space-between;" >
 			<article>
-				<a :href="item.fields.Url" class="image" target="_blank"><img v-if="item.fields.Photos" v-bind:src="item.fields.Photos[0].url" v-bind:alt="item.fields.Title" style="width:100%" /></a>
-				<h3>{{ item.fields.Title }}</h3>
-				        <vue-markdown>{{ item.fields.Article }}</vue-markdown>
+				<a :href="item.fields.Url" class="image" target="_blank"><img :key="'img'+keyId" v-if="item.fields.Photos" v-bind:src="item.fields.Photos[0].url" v-bind:alt="item.fields['Title'+getLanguage]" style="width:100%" /></a>
+				<h3 :key="'h3'+keyId">{{ item.fields['Title'+getLanguage] }}</h3>
+                <vue-markdown :key="'article'+keyId">{{ item.fields['Article'+getLanguage] }}</vue-markdown>
 			</article>
 
             <div style="">  
@@ -48,7 +48,10 @@ export default
         ready: false,
         page: null,
         offset: 0,
-        application: "Starbase18"
+        application: "Starbase18",
+        keyId:1,
+        language:"ENG"
+
         }
     },
     props: {
@@ -63,6 +66,11 @@ export default
     methods:{
     },
     computed: {
+        getLanguage: function () {
+            this.language = this.$store.state.language;
+            this.keyId++;
+            return this.language
+        }
   },
 }
 </script>

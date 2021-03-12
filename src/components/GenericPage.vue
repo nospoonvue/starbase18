@@ -5,8 +5,8 @@
 
     <h1>{{ this.page }}</h1>
     <section id="" class="post" v-for="item in info" :key="item.id">
-        <h2 :v-show="!!item.fields.SectionHeader" >{{ item.fields.SectionHeader }}</h2>
-        <p><vue-markdown>{{ item.fields.SectionContent }}</vue-markdown></p>
+        <h2 :v-show="!!item.fields['SectionHeader'+getLanguage]" :key="'head'+keyId">{{ item.fields['SectionHeader'+ getLanguage] }}</h2>
+        <p><vue-markdown :key="'content'+keyId">{{ item.fields['SectionContent'+ getLanguage] }}</vue-markdown></p>
     </section>
 
     <Paging :paging="this.paging" :parent="this"/>
@@ -38,7 +38,9 @@ export default
         application: "Starbase18", 
         table: "GenericContent",
         view: "Public",
-        filter: '{GenericPage}="'+ this.page + '"'        
+        filter: '{GenericPage}="'+ this.page + '"',
+        language: "ENG",
+        keyId:1        
         }
     },
     props: {
@@ -47,10 +49,16 @@ export default
         pageSize: null,
     },
     created() {
+       
     },
     methods:{
     },
     computed: {
+        getLanguage: function () {
+            this.language = this.$store.state.language;
+            this.keyId++;
+            return this.language
+        }
   },
 }
 </script>
