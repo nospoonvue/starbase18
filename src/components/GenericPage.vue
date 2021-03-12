@@ -3,7 +3,7 @@
 
     <DataConnection :application="this.application" :table="this.table" :view="this.view" :page="this.page" :paging="this.paging" :pageSize="this.pageSize" :offset="this.offset" :filter="this.filter" :parent="this" :key="key" />
 
-    <h1>{{ this.page }}</h1>
+    <h1 class="">{{ this.page }}</h1>
     <section id="" class="post" v-for="item in info" :key="item.id">
         <h2 :v-show="!!getContent('SectionHeader',item)" :key="'head'+keyId" :class="getSpan('SectionHeader',item)">{{ getContent('SectionHeader',item) }}</h2>
         <p :class="getSpan('SectionContent',item)"><vue-markdown :key="'content'+keyId">{{ getContent('SectionContent',item) }}</vue-markdown></p>
