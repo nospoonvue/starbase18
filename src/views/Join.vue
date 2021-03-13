@@ -1,6 +1,6 @@
 <template>
     <div id="blog">    
-       <GenericPage class="" :page="page" :paging="paging" :pageSize="pageSize"/>
+       <GenericPage class="" :page="page" :paging="paging" :pageSize="pageSize" :translateTitle="translateTitle"/>
     </div>
 </template>
 
@@ -20,7 +20,8 @@ export default
         return {
         page: "Join",
         pageSize: 1,
-        paging: false
+        paging: false,
+        translateTitle: true
         }
     },
     methods:{
