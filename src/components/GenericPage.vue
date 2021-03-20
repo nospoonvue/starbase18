@@ -35,7 +35,7 @@ export default
         info: null,
         ready: false,
         offset: 0,
-        application: "Starbase18", 
+        application: this.$application, 
         table: "GenericContent",
         view: "Public",
         filter: '{GenericPage}="'+ this.page + '"',

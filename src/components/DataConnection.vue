@@ -40,6 +40,7 @@ const formData = new FormData();
 formData.append('data', JSON.stringify(settings));
 formData.append('action', 'view');
 //alert(JSON.stringify(settings));
+//console.log(JSON.stringify(settings));
 viewStatus.loading = true;
 await axios.post (viewStatus.$baseUrl, formData, config)
         .then(response => 

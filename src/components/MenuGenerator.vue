@@ -33,7 +33,7 @@ export default
         ready: false,
         page: null,
         offset: 0,
-        application: "Starbase18",
+        application: this.$application,
         keyId:1,
         language:"ENG",
         table: "Menu",

@@ -12,7 +12,7 @@
             <p :class="getSpan('Article',item)"><vue-markdown>{{ getContent('Article',item) }}</vue-markdown></p>
 
             <span class="image object">
-                <img v-bind:src="item.fields.Photos[0].url" v-bind:alt="getContent('Title',item)" style="width:100%" />
+                <img v-if="item.fields.Photos" v-bind:src="item.fields.Photos[0].url" v-bind:alt="getContent('Title',item)" style="width:100%" />
             </span>
             <!--
             <ul class="actions">
@@ -51,7 +51,7 @@ export default
         info: null,
         ready: false,
         offset: 0,
-        application: "Starbase18", 
+        application: this.$application, 
         table: "Blog",
         view: "Public",    
         filter: null,

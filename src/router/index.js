@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Projects from '../views/Projects.vue'
+import ProjectTypes from '../views/ProjectTypes.vue'
 import Blog from '../views/Blog.vue'
 import Contact from '../views/Contact.vue'
 import Team from '../views/Team.vue'
@@ -33,6 +34,12 @@ Vue.use(VueRouter)
     name: 'Contact',
     component: Contact
     },
+    ,
+  {
+  path: '/projectTypes',
+  name: 'ProjectTypes',
+  component: ProjectTypes
+  },
   {
   path: '/projects',
   name: 'Projects',

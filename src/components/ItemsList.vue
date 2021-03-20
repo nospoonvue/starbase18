@@ -6,7 +6,7 @@
     <section id="" class="post" v-for="item in info" :key="item.id" style="float:left;">
 		<div class="" style="max-width:400px;margin:10px; height:500px;  display: flex; flex-direction: column;  justify-content: space-between;" >
 			<article>
-				<a :class="getSpan('Title',item)" :href="item.fields.Url" class="image" target="_blank"><img :key="'img'+keyId" v-if="item.fields.Photos" v-bind:src="item.fields.Photos[0].url" v-bind:alt="getContent('Title',item)" style="width:100%" /></a>
+				<a :class="getSpan('Title',item)" :href="item.fields.Url" class="image" :target="urlTarget"><img :key="'img'+keyId" v-if="item.fields.Photos" v-bind:src="item.fields.Photos[0].url" v-bind:alt="getContent('Title',item)" style="width:100%" /></a>
 				<h3 :class="getSpan('Title',item)" :key="'h3'+keyId">{{ getContent('Title',item) }}</h3>
                 <vue-markdown :class="getSpan('Article',item)" :key="'article'+keyId">{{ getContent('Article',item) }}</vue-markdown>
 			</article>
@@ -48,10 +48,9 @@ export default
         ready: false,
         page: null,
         offset: 0,
-        application: "Starbase18",
+        application: this.$application,
         keyId:1,
         language:"ENG"
-
         }
     },
     props: {
@@ -59,7 +58,8 @@ export default
         pageSize: null,
         table: null,
         view: null,
-        filter: null
+        filter: null,
+        urlTarget: {type: String, default: '_blank'}
     },
     created() {
     },

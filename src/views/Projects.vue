@@ -1,6 +1,7 @@
 <template>
  <div id="projects">
-    <GenericPage class="" :page="this.table" />
+     <GenericPage class="" :page="this.$route.query.projecttype" />
+     <a href="/#/projecttypes" class="button small" >back</a>     
     <ItemsList :table="this.table" :view="this.view" :filter="this.filter" :paging="this.paging" :pageSize="this.pageSize"/>    
 </div>
 </template>
@@ -25,9 +26,10 @@ export default
         pageSize: 10,
         table: "Projects",
         view: "Public",
-        filter: null 
+        filter: '{ProjectTypeTitle}="'+ this.$route.query.projecttype + '"',         
         }
     }
+       
 }
 
 
