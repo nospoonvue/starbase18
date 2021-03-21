@@ -1,7 +1,7 @@
 <template>
  <div id="blog">
 
-    <GenericPage class="" :page="'Blog'" />
+    <GenericPage class="" :page="this.page" />
     <BlogListing :paging="this.paging" :pageSize="this.pageSize"/>
     
 </div>
@@ -34,6 +34,7 @@ export default
     data() 
     {
    return {
+        page: "Blog",
         paging: false,
         pageSize: 1 
         }
@@ -53,6 +54,25 @@ export default
          alert(menuItems.length);
          menuItems[1].click();
         }
+    },
+    metaInfo() {
+        return {
+            title: 'Starbase18 - ' + this.page,
+            meta:[
+                {
+                    name: "description",
+                    content: "Follow our journey, everything we do we are telling about in our blog and other socials"
+                },
+                {
+                    name: "keywords",
+                    content: "Blogging, vlogging, socials, facebook, youtube, instagram, linkedin"
+                },
+                {
+                    name: "author",
+                    content: "Frank Kroondijk"
+                },
+            ]
+      }
     }
 }
 

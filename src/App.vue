@@ -88,6 +88,7 @@ import MenuGenerator from '@/components/MenuGenerator.vue'
 
 
 
+
 export default {
 	components: {MenuGenerator},
 	 data() {

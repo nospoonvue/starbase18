@@ -30,6 +30,25 @@ export default
     },
     created(){
     },
+    metaInfo() {
+        return {
+            title: 'Starbase18 - ' + this.page,
+            meta:[
+                {
+                    name: "description",
+                    content: "Join our team and contribute in any way that you can"
+                },
+                {
+                    name: "keywords",
+                    content: "Internship, volunteer, module, minor, training"
+                },
+                {
+                    name: "author",
+                    content: "Frank Kroondijk"
+                },
+            ]
+      }
+    }
 }
 </script>
 

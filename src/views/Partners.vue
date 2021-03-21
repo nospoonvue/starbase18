@@ -27,6 +27,25 @@ export default
         view: "Public",
         filter: null 
         }
+    },
+    metaInfo() {
+        return {
+            title: 'Starbase18 - ' + this.table,
+            meta:[
+                {
+                    name: "description",
+                    content: "Become a partner of Starbase18 and help us on our joined journey"
+                },
+                {
+                    name: "keywords",
+                    content: "Sponsoring, knowledge exchange, machines, materials, people, mentors"
+                },
+                {
+                    name: "author",
+                    content: "Frank Kroondijk"
+                },
+            ]
+      }
     }
 }
 

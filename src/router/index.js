@@ -12,6 +12,9 @@ import Course from '../views/Course.vue'
 import Partners from '../views/Partners.vue'
 import Mentors from '../views/Mentors.vue'
 import Join from '../views/Join.vue'
+import Meta from 'vue-meta'
+
+Vue.use(Meta)
 
 Vue.use(VueRouter)
 
@@ -40,8 +43,8 @@ Vue.use(VueRouter)
   name: 'ProjectTypes',
   component: ProjectTypes
   },
-  {
-  path: '/projects',
+  {    
+  path: '/projects/:projecttype',
   name: 'Projects',
   component: Projects
   },

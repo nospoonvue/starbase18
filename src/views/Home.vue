@@ -28,6 +28,17 @@ export default
         translateTitle: false
         }
     },
+    metaInfo() {
+        return {
+            title: 'Starbase18 - ' + this.page,
+            meta:[
+                {
+                    name: "Empowering students to thrive in a circular economy",
+                    content: "Building a circular mini vilage in central Portugal"
+                }
+            ]
+      }
+    },
     methods:{
 
     },

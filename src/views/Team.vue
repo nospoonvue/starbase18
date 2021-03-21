@@ -27,6 +27,25 @@ export default
         view: "Public",
         filter: null 
         }
+    },
+    metaInfo() {
+        return {
+            title: 'Starbase18 - ' + this.table,
+            meta:[
+                {
+                    name: "description",
+                    content: "Join our team and expand your knowledge and network while making the world a better place"
+                },
+                {
+                    name: "keywords",
+                    content: "Internship, minor, keuzedeel, module, volunteer, x-honours, excellentieprogramma"
+                },
+                {
+                    name: "author",
+                    content: "Frank Kroondijk"
+                },
+            ]
+      }
     }
 }
 

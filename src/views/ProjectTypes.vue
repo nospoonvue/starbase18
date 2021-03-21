@@ -28,6 +28,25 @@ export default
         filter: null,
         urlTarget: ""
         }
+    },
+    metaInfo() {
+        return {
+            title: 'Starbase18 - ' + this.table,
+            meta:[
+                {
+                    name: "description",
+                    content: "Different types of projects that students and professionals can work on"
+                },
+                {
+                    name: "keywords",
+                    content: "Green tech, high-tech, construction, hospitality, projects, students, teaching, education"
+                },
+                {
+                    name: "author",
+                    content: "Frank Kroondijk"
+                },
+            ]
+      }
     }
 }
 

@@ -31,6 +31,25 @@ export default
     created()
     {
        
+    },
+    metaInfo() {
+        return {
+            title: 'Starbase18 - ' + this.table,
+            meta:[
+                {
+                    name: "description",
+                    content: "Become a mentor for our students"
+                },
+                {
+                    name: "keywords",
+                    content: "Domain specialist, professional, coach, teacher, trainer, mentor"
+                },
+                {
+                    name: "author",
+                    content: "Frank Kroondijk"
+                },
+            ]
+      }
     }
 }
 
