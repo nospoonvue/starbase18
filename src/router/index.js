@@ -12,6 +12,7 @@ import Course from '../views/Course.vue'
 import Partners from '../views/Partners.vue'
 import Mentors from '../views/Mentors.vue'
 import Join from '../views/Join.vue'
+import Merchandise from '../views/Merchandise.vue'
 import Meta from 'vue-meta'
 
 Vue.use(Meta)
@@ -73,6 +74,11 @@ Vue.use(VueRouter)
     name: 'Partners',
     component: Partners
     },
+    {
+      path: '/merchandise',
+      name: 'Merchandise',
+      component: Merchandise
+      },
   {
   path: '/login',
   name: 'Login',

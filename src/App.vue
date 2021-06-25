@@ -13,7 +13,6 @@
 										<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>-->
 										<li><a href="https://www.facebook.com/starbase18" target="_blank" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 										<li><a href="https://www.linkedin.com/company/starbase18/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-										<li><a href="https://www.linkedin.com/groups/9025317/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 										<li><a href="https://www.instagram.com/starbase18/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 										<li><a href="https://www.youtube.com/channel/UCu6f7q7NqtuCD90VVVnhtMA" target="_blank" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
 										
