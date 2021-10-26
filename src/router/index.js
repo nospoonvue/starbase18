@@ -14,6 +14,7 @@ import Mentors from '../views/Mentors.vue'
 import Join from '../views/Join.vue'
 import Merchandise from '../views/Merchandise.vue'
 import Meta from 'vue-meta'
+import SoCeCo from '../views/SoCeCo.vue'
 
 Vue.use(Meta)
 
@@ -38,6 +39,11 @@ Vue.use(VueRouter)
     name: 'Contact',
     component: Contact
     },
+    {
+      path: '/soceco',
+      name: 'SoCeCo',
+      component: SoCeCo
+      }
     ,
   {
   path: '/projectTypes',
