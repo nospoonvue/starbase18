@@ -35,8 +35,8 @@ export default
     {
    return {
         page: "Blog",
-        paging: false,
-        pageSize: 1 
+        paging: true,
+        pageSize: 10 
         }
     },    
     mounted()

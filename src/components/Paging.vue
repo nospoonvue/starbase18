@@ -42,6 +42,7 @@ export default
             this.offsetHistoryCursor++;
             this.offsetHistory[this.offsetHistoryCursor] = this.parent.offset;
             this.parent.key++;//force update
+            window.scrollTo(0, 0);
            
         },
         backward: function()
@@ -50,6 +51,7 @@ export default
             if(this.offsetHistoryCursor < 0) this.offsetHistoryCursor =0;
             this.parent.offset = this.offsetHistory[this.offsetHistoryCursor];
             this.parent.key++;//force update
+            window.scrollTo(0, 0);
         }
     },
     computed: {
